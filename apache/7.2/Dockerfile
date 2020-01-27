@@ -97,7 +97,7 @@ RUN usermod -s /bin/bash -u 1000 -d /var/www/app www-data && \
 
 ADD --chown=www-data:www-data https://raw.githubusercontent.com/php/php-src/php-7.2.0/php.ini-development /usr/local/etc/php/php.ini
 
-COPY files/app.test.conf /etc/apache2/sites-available/
+COPY ../files/app.test.conf /etc/apache2/sites-available/
 RUN a2ensite app.test.conf && \
     a2enmod rewrite
 
